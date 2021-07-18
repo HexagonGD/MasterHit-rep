@@ -1,5 +1,5 @@
 using HitMaster.Attack;
-using HitMaster.Health;
+using HitMaster.Pools;
 using UnityEngine;
 
 namespace HitMaster.Global
@@ -7,14 +7,10 @@ namespace HitMaster.Global
     [CreateAssetMenu(menuName = "HitMaster/GameResources")]
     public class GameResources : ScriptableObject
     {
-        [SerializeField] private HealthConfig _playerHealth;
-        [SerializeField] private HealthConfig _enemyHealth;
+        [SerializeField] private ProjectilePool _projectilePool;
         [SerializeField] private AttackConfig _playerAttack;
-        [SerializeField] private AttackConfig _enemyAttack;
 
-        public HealthConfig PlayerHealth => _playerHealth;
-        public HealthConfig EnemyHealth => _enemyHealth;
+        public ProjectilePool ProjectilePool => _projectilePool;
         public AttackConfig PlayerAttack => _playerAttack;
-        public AttackConfig EnemyAttack => _enemyAttack;
     }
 }
