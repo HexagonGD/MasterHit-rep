@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de17441eada345b4884720097f6cfae9, type: 3}
   m_Name: PlayerAttackConfig
   m_EditorClassIdentifier: 
-  _damage: 0
-  _reload: 0
+  _damage: 10
+  _reload: 1

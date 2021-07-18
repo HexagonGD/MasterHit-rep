@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HitMaster.Stats
+namespace HitMaster.Health
 {
     [CreateAssetMenu(menuName = "HitMaster/HealthConfig")]
     public class HealthConfig : ScriptableObject

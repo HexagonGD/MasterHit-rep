@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace HitMaster.Stats
+namespace HitMaster.Attack
 {
     [CreateAssetMenu(menuName = "HitMaster/AttackConfig")]
     public class AttackConfig : ScriptableObject
