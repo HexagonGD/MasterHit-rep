@@ -1,26 +1,27 @@
-﻿using ES;
-using HitMaster.Events;
-using HitMaster.States;
+﻿using HitMaster.States;
 using UnityEngine;
 
 namespace HitMaster.Units
 {
     public class Player : MonoBehaviour
     {
-        private Animator _animator;
         private IState _state;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private Transform _gun;
+        [SerializeField] private Transform _model;
 
         public Animator Animator => _animator;
+        public Vector3 GunPosition => _gun.position;
+        public Transform Model => _model;
 
         private void Awake()
         {
-            SetState(new AttackState(this));
-            EventSystem.AddListener<ScreenTouchEvent>(this, OnScreenTouch);
+            SetState(new MoveState(this));
         }
 
-        public void OnScreenTouch(ScreenTouchEvent eventArg)
+        private void Update()
         {
-            _state?.OnClick();
+            _state.OnUpdate();
         }
 
         public void SetState(IState state)

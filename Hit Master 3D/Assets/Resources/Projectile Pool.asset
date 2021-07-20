@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05e9f3e5d8c8b249a5db0d1dd256cbc, type: 3}
   m_Name: Projectile Pool
   m_EditorClassIdentifier: Assembly-CSharp:HitMaster.Pools:ProjectilePool
-  _projectilePrefab: {fileID: 4864111228423512058, guid: 3ae740cd48928d04686301dd0153b703,
+  _projectilePrefab: {fileID: 7133111848443845162, guid: 0fb0f6a5b52a6864dbaf84114936b63f,
     type: 3}
   _parent: {fileID: 0}

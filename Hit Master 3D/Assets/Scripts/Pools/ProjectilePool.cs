@@ -1,5 +1,4 @@
-﻿using HitMaster.Global;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace HitMaster.Pools
@@ -16,16 +15,26 @@ namespace HitMaster.Pools
             var projectile = _projectiles.Count == 0 ?
                 Object.Instantiate(_projectilePrefab) :
                 _projectiles.Dequeue();
-            //projectile.transform.SetParent(null);
+            projectile.transform.SetParent(null);
             projectile.gameObject.SetActive(true);
             return projectile;
         }
 
         public void Recycle(Projectile projectile)
         {
+            if(_parent == null)
+            {
+                CreatePoolTransform();
+            }
             projectile.gameObject.SetActive(false);
-            //projectile.transform.SetParent(_parent);
+            projectile.transform.SetParent(_parent);
             _projectiles.Enqueue(projectile);
+        }
+
+        private void CreatePoolTransform()
+        {
+            _parent = new GameObject("Pool").transform;
+            DontDestroyOnLoad(_parent.gameObject);
         }
     }
 }

@@ -36,13 +36,13 @@ namespace HitMaster.Health
 
         private void Show()
         {
-            _slider.enabled = true;
-            _slider.value = _currentHealth / _healthConfig.Health;
+            _slider.gameObject.SetActive(true);
+            _slider.value = (float)_currentHealth / _healthConfig.Health;
         }
 
         private void Hide()
         {
-            _slider.enabled = false;
+            _slider.gameObject.SetActive(false);
         }
     }
 }
